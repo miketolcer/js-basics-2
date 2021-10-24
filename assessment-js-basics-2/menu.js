@@ -31,6 +31,14 @@
 */
 
 //CODE HERE
+const pizza = {
+    name: 'italian',
+    price: 9.00,
+    category: 'entree',
+    popularity: 9,
+    rating: 5,
+    tags: ['thick crust','large', 'extra cheese' ]
+}
 
 
 
@@ -43,8 +51,8 @@
 */
 
 //CODE HERE
-
-
+const popularity = pizza.popularity;
+console.log(popularity)
 /*
     Second, log the second tag in your pizza's
     tags array.
@@ -53,8 +61,7 @@
 */
 
 //CODE HERE
-
-
+console.log(pizza.tags[1])
 /*
     Third, destructure the price off of the
     pizza object.
@@ -63,8 +70,8 @@
 */
 
 //CODE HERE
-
-
+let {price} = pizza
+console.log(price)
 /*
     Fourth, and last, destructure the category
     property.
@@ -73,7 +80,8 @@
 */
 
 //CODE HERE
-
+let {category} = pizza
+console.log(category)
 
 //////////////////PROBLEM 3////////////////////
 /* 
@@ -87,8 +95,8 @@
     data in some functions that you'll write.
 */
 
-//CODE HERE
-
+//CODE HERE,
+const foodArr = ['deep dish','thin crust ','stuffed crust','no cheese','extra chesee' ]
 
 
 //////////////////PROBLEM 4////////////////////
@@ -104,7 +112,7 @@
 */
 
 //CODE HERE
-
+const filteredFood = foodArr.filter(elm === cheese)
 // const filteredFood = foodArr.filter(/* CALLBACK HERE */)
 
 
@@ -149,7 +157,7 @@
 */
 
 //CODE HERE
-
+function filterByProperty ( )
 
 /*
     Invoke the `filterByProperty` function passing

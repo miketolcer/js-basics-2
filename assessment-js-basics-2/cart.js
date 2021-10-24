@@ -37,7 +37,9 @@ const cart = [
 
 // const summedPrice = cart.reduce(/* CALLBACK HERE */)
 
-
+const summedPrice = cart.reduce(function(acc, elem) {
+    return acc + elem
+})
 //////////////////PROBLEM 2////////////////////
 /*  
     Write a function called `calcFinalPrice` that
@@ -53,8 +55,10 @@ const cart = [
     decimals, for example: .06 for a 6% tax.
 */
 
-//CODE HERE
-
+//CODE HERe
+const calcFinalPrice = cart.map(function(elem) {
+    return elem.price - (elem.price * elem.tax )
+})
 
 
 //////////////////PROBLEM 3////////////////////
@@ -79,6 +83,12 @@ const cart = [
 
 /*
     TEXT ANSWER HERE
+    nameOf: for the order
+    order: for what the customer ordered 
+    bill: how much the customer owes
+    wait time: tell customer how long they will wait
+
+
 
 */
 
@@ -88,3 +98,9 @@ const cart = [
 */
 
 //CODE HERE
+const customer = [
+    nameOf: 'joe',
+    order: 'pizza',
+    bill: 11.00,
+    waitTime: '10 min'
+]

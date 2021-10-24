@@ -22,6 +22,9 @@
 */
 
 //CODE HERE
+const greetUser = username => "Welcome back " + `${username}`
+greetUser('Andrew')
+console.log(greetUser('Andrew'))
 
 
 
@@ -50,7 +53,19 @@
 const deliveryAreaZipCodes = [85205, 85204, 85203, 85213, 85206]
 
 //CODE HERE
-
+function canWeDeliver(zipCode) {
+    // check parameter zipcode if its include in deliveryAreaZipCodes  // true
+    let result = deliveryAreaZipCodes.includes(zipCode); 
+    console.log(result) 
+    if (result === true) {
+        console.log('Youre in our delivery zone!')
+    }
+    if (result === false) {
+        console.log('Sorry, we cant deliver to that address')
+    }
+}
+canWeDeliver(85205)
+console.log(canWeDeliver(85205))
 
 
 /* 
@@ -72,7 +87,19 @@ const deliveryAreaZipCodes = [85205, 85204, 85203, 85213, 85206]
 
 // CODE HERE
 
+function canWeDeliverTwo(zipCode) {
+    for (let index = 0; index < deliveryAreaZipCodes.length; index++) {
+      const currentZipCode = deliveryAreaZipCodes[index];
+      if (currentZipCode === zipCode) {
+        console.log("true");
+      }
+      else {
+          console.log("Your not in our delivery area")
+      }
+    }
+}
 
+canWeDeliverTwo(85205)
 //////////////////PROBLEM 3////////////////////
 /* 
     Below is an array of objects that have some
@@ -107,6 +134,8 @@ const deals = [
 */
 
 //CODE HERE
+console.log(title.replace('15', '10'))
+
 
 
 
@@ -122,5 +151,8 @@ const deals = [
     whitespace in this string, since it seems
     to be displaying wrong on the live site.
 */
-
+    
 //CODE HERE
+console.log(desc.replace('March','April'))
+const newDeals = deals.trim() 
+console.log(newDeals)

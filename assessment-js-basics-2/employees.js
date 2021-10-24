@@ -20,7 +20,9 @@
 */
 
 //CODE HERE
-
+class Employee {
+    constructor(name, shifts) {
+getschedule('[name] works on [shifts]')
 
 
 /*
@@ -34,14 +36,20 @@
 */
 
 //CODE HERE
+class empOne {
+    constructor(name,shifts) {
+        this.name = jess
+        this.shifts = weekday mornings, weekday afternoons
 
+    }
+}
 /*
     Call the `getSchedule` method on the
     `empOne` object.
 */
 
 //CODE HERE
-
+console.log(getschedule)
 
 /*
     Make a copy of the empOne object
@@ -56,7 +64,7 @@
 */
 
 //CODE HERE
-
+const empTwo = {...empOne}
 
 
 //////////////////PROBLEM 2////////////////////
@@ -81,8 +89,11 @@
     The function should push the name into 
     the employees array. 
 */
-
-//CODE HERE
+class manager extends Employee {
+    constructor(name,shifts,employees)
+    getEmployees('[name] manages [employees]')
+    addEmployee(emp)
+}
 
 
 
@@ -98,7 +109,11 @@
 */
 
 //CODE HERE
-
+let manager = newClass(
+    name: 'Winston',
+    shifts: 'weekday mornings, weekday afternoons',
+    employees: 'cece and schmidt' 
+)
 
 /*
     Call the `getEmployees` method on the
