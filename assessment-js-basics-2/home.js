@@ -55,8 +55,8 @@ const deliveryAreaZipCodes = [85205, 85204, 85203, 85213, 85206]
 //CODE HERE
 function canWeDeliver(zipCode) {
     // check parameter zipcode if its include in deliveryAreaZipCodes  // true
-    let result = deliveryAreaZipCodes.includes(zipCode); 
-    console.log(result) 
+    let result = deliveryAreaZipCodes.includes(zipCode);
+    console.log(result)
     if (result === true) {
         console.log('Youre in our delivery zone!')
     }
@@ -89,13 +89,13 @@ console.log(canWeDeliver(85205))
 
 function canWeDeliverTwo(zipCode) {
     for (let index = 0; index < deliveryAreaZipCodes.length; index++) {
-      const currentZipCode = deliveryAreaZipCodes[index];
-      if (currentZipCode === zipCode) {
-        console.log("true");
-      }
-      else {
-          console.log("Your not in our delivery area")
-      }
+        const currentZipCode = deliveryAreaZipCodes[index];
+        if (currentZipCode === zipCode) {
+            console.log("true");
+        }
+        else {
+            console.log("Your not in our delivery area")
+        }
     }
 }
 
@@ -115,11 +115,11 @@ canWeDeliverTwo(85205)
 
 const deals = [
     {
-        title: '15% Off!', 
+        title: '15% Off!',
         desc: 'Applied to your entire order when you spend $30 or more'
-    }, 
+    },
     {
-        title: 'Free Kids Meal with 2 Regular Entrees', 
+        title: 'Free Kids Meal with 2 Regular Entrees',
         desc: '   This deal lasts until the end of March! '
     }
 ]
@@ -134,25 +134,33 @@ const deals = [
 */
 
 //CODE HERE
-console.log(title.replace('15', '10'))
+// console.log(title.replace('15', '10'))
+
+//STUART'S SOLUTION
+deals[0].title = deals[0].title.replace('15', '10')
 
 
 
 
 /*
-    The restaurant is going to continue its
-    family deal for another month. 
+The restaurant is going to continue its
+family deal for another month.
 
-    Reassign the value of the second deal's desc
-    to be itself, but use the `replace` method
-    to replace the word March with April.
+Reassign the value of the second deal's desc
+to be itself, but use the `replace` method
+to replace the word March with April.
 
-    You should also make sure that there is no
-    whitespace in this string, since it seems
-    to be displaying wrong on the live site.
+You should also make sure that there is no
+whitespace in this string, since it seems
+to be displaying wrong on the live site.
 */
-    
+
 //CODE HERE
-console.log(desc.replace('March','April'))
-const newDeals = deals.trim() 
-console.log(newDeals)
+// console.log(desc.replace('March', 'April'))
+// const newDeals = deals.trim()
+// console.log(newDeals)
+
+
+//STUART'S SOLUTION
+deals[1].desc = deals[1].desc.replace('March', 'April').trim()
+console.log(deals)

@@ -37,7 +37,7 @@ const pizza = {
     category: 'entree',
     popularity: 9,
     rating: 5,
-    tags: ['thick crust','large', 'extra cheese' ]
+    tags: ['thick crust', 'large', 'extra cheese']
 }
 
 
@@ -70,7 +70,7 @@ console.log(pizza.tags[1])
 */
 
 //CODE HERE
-let {price} = pizza
+let { price } = pizza
 console.log(price)
 /*
     Fourth, and last, destructure the category
@@ -80,7 +80,7 @@ console.log(price)
 */
 
 //CODE HERE
-let {category} = pizza
+let { category } = pizza
 console.log(category)
 
 //////////////////PROBLEM 3////////////////////
@@ -96,8 +96,36 @@ console.log(category)
 */
 
 //CODE HERE,
-const foodArr = ['deep dish','thin crust ','stuffed crust','no cheese','extra chesee' ]
+//Mike's Array
+// const foodArr = ['deep dish','thin crust ','stuffed crust','no cheese','extra chesee' ]
 
+//Re-worked array
+const foodArr = [
+    {
+        name: 'italian',
+        price: 9.00,
+        category: 'entree',
+        popularity: 9,
+        rating: 5,
+        tags: ['thick crust', 'large', 'extra cheese']
+    },
+    {
+        name: 'chinese',
+        price: 5.00,
+        category: 'appetizer',
+        popularity: 6,
+        rating: 2,
+        tags: ['crunchy', 'salty', 'wasabi']
+    },
+    {
+        name: 'american',
+        price: 18.00,
+        category: 'junk',
+        popularity: 11,
+        rating: 10,
+        tags: ['mmmmmm', 'salty', 'extra cheese']
+    }
+]
 
 //////////////////PROBLEM 4////////////////////
 /* 
@@ -112,30 +140,35 @@ const foodArr = ['deep dish','thin crust ','stuffed crust','no cheese','extra ch
 */
 
 //CODE HERE
-const filteredFood = foodArr.filter(elm === cheese)
+//MIKE ORIGINAL
+// const filteredFood = foodArr.filter(elm === cheese)
 // const filteredFood = foodArr.filter(/* CALLBACK HERE */)
 
+//STUART'S SOLUTION
+const filteredFood = foodArr.filter((foodItem) => {
+    return foodItem.tags.includes('extra cheese')
+})
 
-
+console.log(filteredFood)
 //////////////////PROBLEM 5////////////////////
-/* 
+/*
     Now let's write a function that's a little
     more flexible than just filtering for one
-    value. We want to be able to filter for 
-    food that has above a certain rating, 
+    value. We want to be able to filter for
+    food that has above a certain rating,
     below a certain price, or any other combo.
 
     Write a function called `filterByProperty`
-    that takes in three arguments: `property`, 
-    `number`, and `type. 
+    that takes in three arguments: `property`,
+    `number`, and `type.
 
     The property will be a string (rating,
     popularity, or price)
 
     The number will be the number that you want
-    to compare against 
+    to compare against
 
-    The type should be 'above' or 'below' to 
+    The type should be 'above' or 'below' to
     indicate whether you want to get foods with
     values that are above or below the given number
     for the given property
@@ -145,19 +178,32 @@ const filteredFood = foodArr.filter(elm === cheese)
 
     Use the filter method to filter the foodArr
 
-        In the callback, check if the `type` is `above`, 
+        In the callback, check if the `type` is `above`,
         if it is, return objects whose value for the given
         property is greater than the `number` passed in
 
         If the type isn't `below`, return objects whose
-        value for the given property is less than the 
+        value for the given property is less than the
         `number` passed in
-    
+
     Return the filtered array from the entire function
 */
 
 //CODE HERE
-function filterByProperty ( )
+
+//STUART'S SOLUTION
+function filterByProperty(property, number, type) {
+    const filteredFood = foodArr.filter((foodItem) => {
+        const value = foodItem[property]
+        if (type === 'above') {
+            return value >= number
+        } else {
+            return value <= number
+        }
+    })
+    return filteredFood
+}
+
 
 /*
     Invoke the `filterByProperty` function passing
@@ -167,3 +213,6 @@ function filterByProperty ( )
 */
 
 //CODE HERE
+//STUART'S SOLUTION
+console.log('========================================================')
+console.log(filterByProperty('price', 6, 'below'))

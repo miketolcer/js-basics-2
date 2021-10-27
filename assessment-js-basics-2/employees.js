@@ -20,9 +20,21 @@
 */
 
 //CODE HERE
+//ORIGINAL
+// class Employee {
+//     constructor(name, shifts) {
+// getschedule('[name] works on [shifts]')
+
+//SOLUTION
 class Employee {
     constructor(name, shifts) {
-getschedule('[name] works on [shifts]')
+        this.name = name;
+        this.shifts = shifts;
+    }
+    getSchedule() {
+        console.log(`${this.name} works on ${this.shifts}`)
+    }
+}
 
 
 /*
@@ -36,20 +48,29 @@ getschedule('[name] works on [shifts]')
 */
 
 //CODE HERE
-class empOne {
-    constructor(name,shifts) {
-        this.name = jess
-        this.shifts = weekday mornings, weekday afternoons
 
-    }
-}
+//ATTEMPTED 
+// class empOne {
+//     constructor(name, shifts) {
+//         this.name = jess
+//         this.shifts = weekday mornings, weekday afternoons
+
+//     }
+// }
+
+//SOLUTION 
+const empOne = new Employee('Stuart', 'every day, all day')
 /*
     Call the `getSchedule` method on the
     `empOne` object.
 */
 
 //CODE HERE
-console.log(getschedule)
+//ATTEMPT
+// console.log(getschedule)
+
+//SOLUTION
+empOne.getSchedule()
 
 /*
     Make a copy of the empOne object
@@ -58,23 +79,27 @@ console.log(getschedule)
 
     Change the name of `empTwo` to 'Nick'.
 
-    Hint: you can do this inline with the 
-    spread operator or reassign it using 
+    Hint: you can do this inline with the
+    spread operator or reassign it using
     dot or bracket notation.
 */
 
 //CODE HERE
-const empTwo = {...empOne}
+//PARTIALLY CORRECT ATTEMPT
+// const empTwo = { ...empOne }
 
+//FULL SOLUTION
+const empTwo = { ...empOne, name: 'Nick' }
+console.log(empTwo)
 
 //////////////////PROBLEM 2////////////////////
-/*  
-    Write a class called Manager that *extends* 
-    the Employee class. In the constructor, 
-    make sure you require all of the parameters 
-    from the Employee class as well as 1 
-    new one: employees, which will be an array of 
-    employees that report to this manager. 
+/*
+    Write a class called Manager that *extends*
+    the Employee class. In the constructor,
+    make sure you require all of the parameters
+    from the Employee class as well as 1
+    new one: employees, which will be an array of
+    employees that report to this manager.
     (Hint: don't forget to call the super function)
 
     Create a method called `getEmployees` that
@@ -86,13 +111,31 @@ const empTwo = {...empOne}
     Create a second method called `addEmployee`
     that takes in one argument, `emp`, which
     should be a string of an employee name.
-    The function should push the name into 
-    the employees array. 
+    The function should push the name into
+    the employees array.
 */
-class manager extends Employee {
-    constructor(name,shifts,employees)
-    getEmployees('[name] manages [employees]')
-    addEmployee(emp)
+//ATTEMPT
+// class manager extends Employee {
+//     constructor(name, shifts, employees)
+//     getEmployees('[name] manages [employees]')
+//     addEmployee(emp)
+// }
+
+//SOLUTION
+class Manager extends Employee {
+    constructor(name, shifts, employees) {
+        super(name, shifts)
+        this.employees = employees
+    }
+    getEmployees() {
+        console.log(`${this.name} manages: `)
+        this.employees.forEach((employee) => {
+            console.log(employee)
+        })
+    }
+    addEmployee(newEmployee) {
+        this.employees.push(newEmployee)
+    }
 }
 
 
@@ -109,31 +152,47 @@ class manager extends Employee {
 */
 
 //CODE HERE
-let manager = newClass(
-    name: 'Winston',
-    shifts: 'weekday mornings, weekday afternoons',
-    employees: 'cece and schmidt' 
-)
+
+//ATTEMPT
+// let manager = newClass(
+//     name: 'Winston',
+//     shifts: 'weekday mornings, weekday afternoons',
+//     employees: 'cece and schmidt'
+// )
+
+//SOLUTION
+const manager = new Manager('Winston', 'weekday mornings, weekday afternoons', ['cece', 'schmidt'])
+
+console.log(manager)
 
 /*
     Call the `getEmployees` method on the
-    `manager` object.  
+    `manager` object.
 */
 
 //CODE HERE
+//NOT ATTEMPTED
+//SOLUTION
+manager.getEmployees()
 
 /*
-    Call the `addEmployee` method on the 
-    `manager` object passing in the string 
+    Call the `addEmployee` method on the
+    `manager` object passing in the string
     'Coach' or whatever name you'd like.
 */
 
 //CODE HERE 
+//NOT ATTEMPTED
+//SOLUTION
+manager.addEmployee('Coach')
 
 /*
     Call the `getEmployees` method on the
-    `manager` object again to confirm 
+    `manager` object again to confirm
     that an employee was added.
 */
 
 //CODE HERE
+//NOT ATTEMPTED
+//SOLUTION
+manager.getEmployees()
