@@ -20,15 +20,15 @@
 
 const cart = [
     {
-        name: 'pizza', 
+        name: 'pizza',
         price: 9.99
-    }, 
+    },
     {
-        name: 'pasta', 
+        name: 'pasta',
         price: 8.99
-    }, 
+    },
     {
-        name: 'salad', 
+        name: 'salad',
         price: 7.99
     }
 ]
@@ -37,9 +37,16 @@ const cart = [
 
 // const summedPrice = cart.reduce(/* CALLBACK HERE */)
 
-const summedPrice = cart.reduce(function(acc, elem) {
-    return acc + elem
-})
+//MIKES ORIGINAL 
+// const summedPrice = cart.reduce(function(acc, elem) {
+//     return acc + elem
+// })
+
+//MIKES RE-WORKED
+const summedPrice = cart.reduce(function (acc, elem) {
+    return acc + elem.price
+}, 0)
+console.log(summedPrice)
 //////////////////PROBLEM 2////////////////////
 /*  
     Write a function called `calcFinalPrice` that
@@ -56,10 +63,17 @@ const summedPrice = cart.reduce(function(acc, elem) {
 */
 
 //CODE HERe
-const calcFinalPrice = cart.map(function(elem) {
-    return elem.price - (elem.price * elem.tax )
-})
+//MIKES ORIGINAL SOLUTION
+// const calcFinalPrice = cart.map(function (elem) {
+//     return elem.price - (elem.price * elem.tax)
+// })
 
+// STUART'S SOLUTION
+const calcFinalPrice = (cartTotal, couponValue, tax) => {
+    return cartTotal * (1 + tax) - couponValue
+}
+
+console.log(calcFinalPrice(summedPrice, 2, .2))
 
 //////////////////PROBLEM 3////////////////////
 /*  
@@ -98,9 +112,9 @@ const calcFinalPrice = cart.map(function(elem) {
 */
 
 //CODE HERE
-const customer = [
+const customer = {
     nameOf: 'joe',
     order: 'pizza',
     bill: 11.00,
     waitTime: '10 min'
-]
+}
